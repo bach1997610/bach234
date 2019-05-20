@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PatientFormController">
+   <top>
+      <Label text="Cập nhật danh sách bệnh nhân" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </Label>
+   </top>
+   <left>
+      <GridPane hgap="10.0" BorderPane.alignment="TOP_CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Mã BN:">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label text="Họ:" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label text="Tên:" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label text="Giới tính:" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label text="Số ĐT:" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="tf_id" GridPane.columnIndex="1" />
+            <TextField fx:id="tf_firstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_lastName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cb_sex" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <DatePicker fx:id="dp_dob" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Ngày sinh:" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="tf_phone" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Chi tiết thiết bị" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Tên TB:" GridPane.rowIndex="7" />
+            <Label text="Ngày sử dụng:" GridPane.rowIndex="8" />
+            <TextField fx:id="tf_deviceName" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <DatePicker fx:id="dp_usageDate" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+         </children>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </GridPane>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tv_patient" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="47.0" prefWidth="527.0">
+               <children>
+                  <Label fx:id="lb_error" alignment="CENTER" text="Error here" textAlignment="CENTER" textFill="RED">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleAddPatient" prefWidth="60.0" text="Thêm" />
+                  <Button mnemonicParsing="false" onAction="#handleModifyPatient" prefWidth="60.0" text="Sửa" />
+                  <Button mnemonicParsing="false" onAction="#handleRemovePatient" prefWidth="60.0" text="Xóa" />
+                  <Button mnemonicParsing="false" onAction="#handleSavePatient" prefWidth="60.0" text="Lưu" />
+                  <Button mnemonicParsing="false" onAction="#handleClose" prefWidth="60.0" text="Đóng" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <TableView fx:id="tv_device" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleAddDevice" prefWidth="65.0" text="Thêm TB" />
+                  <Button mnemonicParsing="false" onAction="#handleModifyDevice" prefWidth="65.0" text="Sửa TB" />
+                  <Button mnemonicParsing="false" onAction="#handleRemoveDevice" prefWidth="65.0" text="Xóa TB" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

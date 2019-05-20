@@ -1,0 +1,19 @@
+.button {
+    -fx-font: 14px "System";
+}
+
+.pane_board {
+    -fx-background-color: aquamarine;
+}
+
+#lb_title {
+    -fx-font: 20px "System";
+    -fx-font-weight: bold;
+    -fx-text-fill: darkmagenta;
+}
+#lb_message {
+    -fx-font: 16px "System";
+    -fx-font-weight: bold;
+    -fx-text-fill: red;
+}
+

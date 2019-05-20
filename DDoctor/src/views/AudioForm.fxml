@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="537.0" prefWidth="693.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AudioFormController">
+    <stylesheets>
+        <URL value="@/css/audioForm.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tv_audio" layoutX="14.0" layoutY="93.0" prefHeight="251.0" prefWidth="377.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label layoutX="126.0" layoutY="14.0" text="Cập nhật danh sách audio" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <VBox alignment="TOP_CENTER" layoutX="404.0" layoutY="93.0" prefHeight="251.0" prefWidth="276.0" spacing="10.0">
+         <children>
+            <Label text="Audio test">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="pane_mediaControl" prefHeight="200.0" prefWidth="214.0" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="359.0" prefHeight="44.0" prefWidth="309.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="55.0" text="Thêm" />
+            <Button mnemonicParsing="false" onAction="#handleRemove" prefHeight="25.0" prefWidth="56.0" text="Bớt" />
+            <Button mnemonicParsing="false" onAction="#handleSave" prefHeight="25.0" prefWidth="50.0" text="Lưu" />
+            <Button mnemonicParsing="false" onAction="#handleClose" text="Đóng" />
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

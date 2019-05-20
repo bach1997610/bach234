@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="AnchorPane" prefHeight="318.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainMenuController">
+    <center>
+        <VBox alignment="TOP_CENTER" prefHeight="368.0" prefWidth="489.0" spacing="10.0" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <Button fx:id="but_patient" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handlePatientUpdate" prefHeight="25.0" prefWidth="150.0" text="Cập nhật bệnh nhân" textAlignment="CENTER">
+                    <opaqueInsets>
+                        <Insets bottom="10.0" top="10.0" />
+                    </opaqueInsets>
+                </Button>
+                <Button fx:id="but_audio" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAudioUpdate" prefWidth="150.0" text="Cập nhật thư viện audio" textAlignment="CENTER" />
+                <Button fx:id="but_diagnose" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleTreatement" prefHeight="25.0" prefWidth="150.0" text="Điều trị" />
+            <Button mnemonicParsing="false" onAction="#handleStatistics" prefWidth="150.0" text="Thống kê" />
+                <Button fx:id="but_quit" alignment="CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="25.0" prefWidth="150.0" text="Thoát" />
+            </children>
+            <opaqueInsets>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </opaqueInsets>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+        </VBox>
+    </center>
+    <top>
+        <Label text="MENU" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+        </Label>
+    </top>
+</BorderPane>

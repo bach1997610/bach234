@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="pane_main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.set.carobyfx.FXMLController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label id="lb_title" fx:id="lb_title" alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" text="Caro by JavaFX" textAlignment="CENTER" />
+         </children>
+      </HBox>
+   </top>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleNewGame" prefHeight="30.0" prefWidth="120.0" text="New game" wrapText="true" />
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#newGameWithComputer" prefHeight="50.0" prefWidth="120.0" text="New with Computer" textAlignment="CENTER" wrapText="true" />
+            <Button id="bt_remote" mnemonicParsing="false" onAction="#playRemote" prefHeight="50.0" prefWidth="120.0" text="Play with Remote Player" textAlignment="CENTER" wrapText="true" />
+            <Button mnemonicParsing="false" onAction="#handleClosing" prefHeight="30.0" prefWidth="120.0" text="Close" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Copyright by HUST-SET" />
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <left>
+      <GridPane hgap="10.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="35.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Board size:" />
+            <ComboBox fx:id="cb_size" onAction="#handleBoardSizeChanged" prefWidth="150.0" GridPane.columnIndex="1" />
+            <Label text="Level:" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cb_level" onAction="#handleLevelChanged" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Name:" GridPane.rowIndex="2" />
+            <TextField fx:id="tf_name" promptText="Abcd" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </left>
+   <center>
+      <GridPane>
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox fx:id="pane_board" alignment="TOP_CENTER" BorderPane.alignment="CENTER" GridPane.columnSpan="2" />
+            <Label id="lb_message" fx:id="lb_message" text="message" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
